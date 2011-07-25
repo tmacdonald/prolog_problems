@@ -189,3 +189,20 @@ test('Lists 22', function(){
 	ok(equals(p122(1,2), [1,2]), '1,2 -> [1,2]');
 	ok(equals(p122(4,9), [4,5,6,7,8,9]), '4,9 -> [4,5,6,7,8,9]');
 });
+
+test('Lists 23', function(){
+	var result = p123([1],3);
+	ok(equals(result, [1,1,1]), '[1],3 -> [1,1,1]');
+	var input = [1,2,3];
+	result = p123(input,3);
+	ok(result.length == 3, '[1,2,3],3 -> list of length 3');
+	ok(input.indexOf(result[0]) >= 0, 'result[0] exists in input');
+	ok(input.indexOf(result[1]) >= 0, 'result[1] exists in input');
+	ok(input.indexOf(result[2]) >= 0, 'result[2] exists in input');
+	input = [1,2,3,4,5,6,7,8];
+	result = p123(input,3);
+	ok(result.length == 3, '[1,2,3,4,5,6,7,8],3 -> list of length 3');
+	ok(input.indexOf(result[0]) >= 0, 'result[0] exists in input');
+	ok(input.indexOf(result[1]) >= 0, 'result[1] exists in input');
+	ok(input.indexOf(result[2]) >= 0, 'result[2] exists in input');
+});

@@ -209,7 +209,6 @@ function p119(l,k) {
 function p120(l,k) {
 	var element = l.splice(k-1,1);
 	var result = { element: element[0], remainder: l };
-	console.log(result);
 	return result;
 }
 
@@ -222,6 +221,15 @@ function p122(i,j) {
 	var result = [];
 	for ( var k = i; k <= j; k++ ) {
 		result.push( k );
+	}
+	return result;
+}
+
+function p123(l,k) {
+	var result = [];
+	for ( var i = 0; i < k; i++ ) {
+		var rnd = Math.floor(Math.random() * l.length);
+		result.push( l[rnd] );
 	}
 	return result;
 }
