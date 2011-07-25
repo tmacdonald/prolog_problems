@@ -131,3 +131,17 @@ function p111(l) {
 	}
 	return result;
 }
+
+function p112(l) {
+	var result = [];
+	for ( var i = 0; i < l.length; i++ ) {
+		if ( l[i] instanceof Array ) {
+			for ( var j = 0; j < l[i][0]; j++ ) {
+				result.push( l[i][1] );
+			}
+		} else {
+			result.push( l[i] );
+		}
+	}
+	return result;
+}
