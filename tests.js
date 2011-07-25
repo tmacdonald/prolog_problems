@@ -162,3 +162,18 @@ test('Lists 19', function(){
 	ok(equals(p119([1,2],3), [1,2]), '[1,2],3 -> [1,2]');
 	ok(equals(p119([1,2,3,4,5,6,7,8],3), [4,5,6,7,8,1,2,3]), '[1,2,3,4,5,6,7,8],3 -> [4,5,6,7,8,1,2,3]');
 });
+
+test('Lists 20', function(){
+	var result = p120([],2);
+	ok(result.element === undefined, '[],2 -> undefined,[]');
+	ok(equals(result.remainder, []), '[],2 -> undefined,[]');
+	result = p120([1],1);
+	ok(result.element === 1, '[1],1 -> 1,[]');
+	ok(equals(result.remainder, []), '[1],1 -> 1,[]');
+	result = p120([1,2,3],2);
+	ok(result.element === 2, '[1,2,3],2 -> 2,[1,3]');
+	ok(equals(result.remainder, [1,3]), '[1,2,3],2 -> 2,[1,3]');
+	result = p120([1,2,3,4],2);
+	ok(result.element === 2, '[1,2,3,4],2 -> 2,[1,3,4]');
+	ok(equals(result.remainder, [1,3,4]), '[1,2,3,4],2 -> 2,[1,3,4]');
+});

@@ -201,9 +201,14 @@ function p118(l,i,j) {
 
 function p119(l,k) {
 	var p117_result = p117(l,k);
-	console.log( p117_result );
 	var result = p117_result.right;
 	result = result.concat( p117_result.left );
-	console.log( result );
+	return result;
+}
+
+function p120(l,k) {
+	var element = l.splice(k-1,1);
+	var result = { element: element[0], remainder: l };
+	console.log(result);
 	return result;
 }
