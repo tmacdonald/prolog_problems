@@ -168,3 +168,13 @@ function p114(l) {
 	return result;
 }
 
+function p115(l,k) {
+	var result = [];
+	for ( var i = 0; i < l.length; i++ ) {
+		for ( var j = 0; j < k; j++ ) {
+			result.push( l[i] );
+		}
+	}
+	return result;
+}
+
