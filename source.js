@@ -188,3 +188,9 @@ function p116(l,k) {
 	return result;
 }
 
+function p117(l,k) {
+	var result = {};
+	result.left = l.slice(0,k);
+	result.right = l.slice(k);
+	return result;
+}

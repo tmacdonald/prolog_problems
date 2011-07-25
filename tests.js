@@ -136,3 +136,18 @@ test('Lists 16', function(){
 	ok(equals(p116([1,2,3,4],3), [1,2,4]), '[1,2,3,4],3 -> [1,2,4]');
 	ok(equals(p116([1,2,3,4,5,6,7,8,9,10],3), [1,2,4,5,7,8,10]), '[1,2,3,4,5,6,7,8,9,10],3 -> [1,2,4,5,7,8,10]');
 });
+
+test('Lists 17', function(){
+	var result = p117([],2);
+	console.log( result );
+	ok(equals(result.left, []), '[],2 -> []');
+	ok(equals(result.right, []), '[],2 -> []');
+	result = p117([1,2],1);
+	console.log( result );
+	ok(equals(result.left, [1]), '[1,2],1 -> [1]');
+	ok(equals(result.right, [2]), '[1,2],1 -> [2]');
+	result = p117([1,2,3,4,5,6,7,8,9,10],3);
+	console.log( result );
+	ok(equals(result.left, [1,2,3]), '[1,2,3,4,5,6,7,8,9,10],3 -> [1,2,3]');
+	ok(equals(result.right, [4,5,6,7,8,9,10]), '[1,2,3,4,5,6,7,8,9,10],3 -> [4,5,6,7,8,9,10]');
+});
