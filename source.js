@@ -25,7 +25,12 @@ function copy(l1) {
 function equals(l1, l2) {
 	if ( l1.length === l2.length ) {
 		for ( var i = 0; i < l1.length; i++ ) {
-			if ( l1[i] !== l2[i] ) {
+			if ( l1[i] instanceof Array && l2[i] instanceof Array ) {
+				if ( !equals( l1[i], l2[i] ) ) {
+					return false;
+				}
+			}
+			else if ( l1[i] !== l2[i] ) {
 				return false;
 			}
 		}
@@ -66,4 +71,63 @@ function p108(l) {
 	}
 	return result;
 	
+}
+
+function p109(l) {
+	var result = [];
+	var curr_array = [];
+	for ( var i = 0; i < l.length; i++ ) {
+		if ( curr_array.length != 0 && curr_array[0] !== l[i] ) {
+			result.push( curr_array );
+			curr_array = [];
+		}
+		curr_array.push( l[i] );
+	}
+	if ( curr_array.length !== 0 ) {
+		result.push( curr_array );
+	}
+	return result;
+}
+
+function p110(l) {
+	var result = [];
+	var last_element;
+	var last_count = 0;
+	for ( var i = 0; i < l.length; i++ ) {
+		if ( last_count !== 0 && last_element !== l[i] ) {
+			result.push( [last_count, last_element] );
+			last_count = 0;
+		}
+		last_element = l[i];
+		last_count++;
+	}
+	if ( last_count !== 0 ) {
+		result.push( [last_count, last_element] );
+	}
+	return result;
+}
+
+function p111(l) {
+	var result = [];
+	var last_element;
+	var last_count = 0;
+	for ( var i = 0; i < l.length; i++ ) {
+		if ( last_count !== 0 && last_element !== l[i] ) {
+			if ( last_count === 1 ) {
+				result.push( last_element );
+			} else {
+				result.push( [last_count, last_element] );
+			}
+			last_count = 0;
+		}
+		last_element = l[i];
+		last_count++;
+	}
+	if ( last_count === 1 ) {
+		result.push( last_element );
+	}
+	else if ( last_count !== 0 ) {
+		result.push( [last_count, last_element] );
+	}
+	return result;
 }
