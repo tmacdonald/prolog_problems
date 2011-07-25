@@ -194,3 +194,7 @@ function p117(l,k) {
 	result.right = l.slice(k);
 	return result;
 }
+
+function p118(l,i,j) {
+	return l.slice(i-1,j);
+}
