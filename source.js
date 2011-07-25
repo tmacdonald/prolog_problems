@@ -178,3 +178,13 @@ function p115(l,k) {
 	return result;
 }
 
+function p116(l,k) {
+	var result = [];
+	for ( var i = 0; i < l.length; i++ ) {
+		if ( (i+1) % k !== 0 ) {
+			result.push( l[i] );
+		}
+	}
+	return result;
+}
+
