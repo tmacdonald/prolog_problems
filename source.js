@@ -198,3 +198,12 @@ function p117(l,k) {
 function p118(l,i,j) {
 	return l.slice(i-1,j);
 }
+
+function p119(l,k) {
+	var p117_result = p117(l,k);
+	console.log( p117_result );
+	var result = p117_result.right;
+	result = result.concat( p117_result.left );
+	console.log( result );
+	return result;
+}
