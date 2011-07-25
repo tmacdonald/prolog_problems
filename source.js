@@ -109,6 +109,33 @@ function p110(l) {
 
 function p111(l) {
 	var result = [];
+	var pre = p110(l);
+	for ( var i = 0; i < pre.length; i++ ) {
+		if ( pre[i][0] === 1 ) {
+			result.push( pre[i][1] );
+		} else {
+			result.push( pre[i] );
+		}
+	}
+	return result;
+}
+
+function p112(l) {
+	var result = [];
+	for ( var i = 0; i < l.length; i++ ) {
+		if ( l[i] instanceof Array ) {
+			for ( var j = 0; j < l[i][0]; j++ ) {
+				result.push( l[i][1] );
+			}
+		} else {
+			result.push( l[i] );
+		}
+	}
+	return result;
+}
+
+function p113(l) {
+	var result = [];
 	var last_element;
 	var last_count = 0;
 	for ( var i = 0; i < l.length; i++ ) {
@@ -132,16 +159,12 @@ function p111(l) {
 	return result;
 }
 
-function p112(l) {
+function p114(l) {
 	var result = [];
 	for ( var i = 0; i < l.length; i++ ) {
-		if ( l[i] instanceof Array ) {
-			for ( var j = 0; j < l[i][0]; j++ ) {
-				result.push( l[i][1] );
-			}
-		} else {
-			result.push( l[i] );
-		}
+		result.push( l[i] );
+		result.push( l[i] );
 	}
 	return result;
 }
+
