@@ -217,3 +217,11 @@ function p121(l,k,e) {
 	l.splice(k-1,0,e);
 	return l;
 }
+
+function p122(i,j) {
+	var result = [];
+	for ( var k = i; k <= j; k++ ) {
+		result.push( k );
+	}
+	return result;
+}
