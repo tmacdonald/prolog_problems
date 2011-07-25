@@ -212,3 +212,8 @@ function p120(l,k) {
 	console.log(result);
 	return result;
 }
+
+function p121(l,k,e) {
+	l.splice(k-1,0,e);
+	return l;
+}
