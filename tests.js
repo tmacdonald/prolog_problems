@@ -206,3 +206,21 @@ test('Lists 23', function(){
 	ok(input.indexOf(result[1]) >= 0, 'result[1] exists in input');
 	ok(input.indexOf(result[2]) >= 0, 'result[2] exists in input');
 });
+
+test('Lists 24', function(){
+	var result = p124(1,1);
+	ok(equals(result, [1]), '1,1 -> [1]');
+	result = p124(1,10);
+	ok([1,2,3,4,5,6,7,8,9,10].indexOf(result[0]) >= 0, '1,10 -> [1..10]');
+	result = p124(10,10);
+	for ( var i = 1; i <= 10; i++ ) {
+		ok(result.indexOf(i) >= 0, 'result contains ' + i);
+	}
+	result = p124(6,49);
+	for ( var i = 0; i < result.length; i++ ) {
+		ok(result[i] > 0 && result[i] <= 49, 'Number is between 1 and 49');
+		var index = result.indexOf(result[i]);
+		var next_index = result.indexOf(result[i],index+1);
+		ok(next_index === -1, 'Number occurs only once');
+	}
+});

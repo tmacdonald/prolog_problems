@@ -233,3 +233,16 @@ function p123(l,k) {
 	}
 	return result;
 }
+
+function p124(j,k) {
+	var range = p122(1,k);
+	var result = [];
+	for ( var i = 0; i < j; i++ ) {
+		var element = p123(range,1)[0];
+		while ( result.indexOf( element ) >= 0 ) {
+			element = p123(range,1)[0];
+		}
+		result.push(element);
+	}
+	return result;
+}
