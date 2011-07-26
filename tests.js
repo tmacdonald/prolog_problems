@@ -296,3 +296,9 @@ test('Arithmetic 3', function(){
 	ok(equals(prime_factors_mult(9), [[2,3]]), '9 -> [[2,3]]');
 	ok(equals(prime_factors_mult(315), [[2,3],[1,5],[1,7]]), '315 -> [[2,3],[1,5],[1,7]]');
 });
+
+test('Arithmetic 4', function(){
+	ok(equals(prime_range(1,1), [1]), '1,1 -> [1]');
+	ok(equals(prime_range(1,9), [1,2,3,5,7]), '1,9 -> [1,2,3,5,7]');
+	ok(equals(prime_range(5,20), [5,7,11,13,17,19]), '5,20 -> [5,7,11,13,17,19]');
+});

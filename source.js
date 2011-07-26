@@ -328,3 +328,13 @@ function prime_factors(n) {
 function prime_factors_mult(n) {
 	return p110(prime_factors(n));
 }
+
+function prime_range(m,n) {
+	var result = [];
+	for ( var i = m; i <= n; i++ ) {
+		if ( is_prime(i) ) {
+			result.push(i);
+		}
+	}
+	return result;
+}
