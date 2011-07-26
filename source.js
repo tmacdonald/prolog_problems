@@ -324,3 +324,7 @@ function prime_factors(n) {
 	}
 	return result;
 }
+
+function prime_factors_mult(n) {
+	return p110(prime_factors(n));
+}

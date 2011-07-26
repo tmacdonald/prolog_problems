@@ -290,3 +290,9 @@ test('Arithmetic 2', function(){
 	ok(equals(prime_factors(9), [3,3]), '9 -> [3,3]');
 	ok(equals(prime_factors(315), [3,3,5,7]), '315 -> [3,3,5,7]');
 });
+
+test('Arithmetic 3', function(){
+	ok(equals(prime_factors_mult(2), [[1,2]]), '2 -> [[1,2]]');
+	ok(equals(prime_factors_mult(9), [[2,3]]), '9 -> [[2,3]]');
+	ok(equals(prime_factors_mult(315), [[2,3],[1,5],[1,7]]), '315 -> [[2,3],[1,5],[1,7]]');
+});
