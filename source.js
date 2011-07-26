@@ -252,3 +252,22 @@ function p124(j,k) {
 function p125(l) {
 	return p123(l,l.length);
 }
+
+function p126(l,k) {
+	var result = [];
+	if ( k == 1 ) {
+		return l;
+	} else {
+		for ( var i = 0; i < l.length; i++ ) {
+			var new_l = l.slice(i+1);
+			var k_l = p126(new_l,k-1);
+			if ( k_l.length > 0 ) {
+				for ( var j = 0; j < k_l.length; j++ ) {
+					var to_add = [l[i]].concat( k_l[j] );
+					result.push( to_add );
+				}
+			}
+		}
+	}
+	return result;
+}

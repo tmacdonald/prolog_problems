@@ -240,3 +240,22 @@ test('Lists 25', function(){
 	}
 
 });
+
+test('Lists 26', function(){
+	var result = p126([1],1);
+	console.log(result);
+	ok(equals(result, [1]), '[1],1 -> [1]');
+	result = p126([1,2,3],2);
+	console.log(result);
+	ok(equals(result, [[1,2],[1,3],[2,3]]), '[1,2,3],2 -> [[1,2],[1,3],[2,3]]');
+	result = p126([1,2,3,4,5,6],3);
+	console.log(result);
+	ok(result.length === 20, '[1,2,3,4,5,6],3 -> result of length 20');
+	ok(equals(result[0], [1,2,3]), '[1,2,3,4,5,6],3(0) -> [1,2,3]');
+	ok(equals(result[1], [1,2,4]), '[1,2,3,4,5,6],3(1) -> [1,2,4]');
+	ok(equals(result[2], [1,2,5]), '[1,2,3,4,5,6],3(2) -> [1,2,5]');
+	ok(equals(result[17], [3,4,6]), '[1,2,3,4,5,6],3(17) -> [3,4,6]');
+	ok(equals(result[18], [3,5,6]), '[1,2,3,4,5,6],3(18) -> [3,5,6]');
+	ok(equals(result[19], [4,5,6]), '[1,2,3,4,5,6],3(19) -> [4,5,6]');
+	
+});
