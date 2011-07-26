@@ -191,16 +191,16 @@ test('Lists 22', function(){
 });
 
 test('Lists 23', function(){
-	var result = p123([1],3);
-	ok(equals(result, [1,1,1]), '[1],3 -> [1,1,1]');
+	var result = p123([1],1);
+	ok(equals(result, [1]), '[1],1 -> [1]');
 	var input = [1,2,3];
-	result = p123(input,3);
+	result = p123([1,2,3],3);
 	ok(result.length == 3, '[1,2,3],3 -> list of length 3');
 	ok(input.indexOf(result[0]) >= 0, 'result[0] exists in input');
 	ok(input.indexOf(result[1]) >= 0, 'result[1] exists in input');
 	ok(input.indexOf(result[2]) >= 0, 'result[2] exists in input');
 	input = [1,2,3,4,5,6,7,8];
-	result = p123(input,3);
+	result = p123([1,2,3,4,5,6,7,8],3);
 	ok(result.length == 3, '[1,2,3,4,5,6,7,8],3 -> list of length 3');
 	ok(input.indexOf(result[0]) >= 0, 'result[0] exists in input');
 	ok(input.indexOf(result[1]) >= 0, 'result[1] exists in input');
@@ -223,4 +223,20 @@ test('Lists 24', function(){
 		var next_index = result.indexOf(result[i],index+1);
 		ok(next_index === -1, 'Number occurs only once');
 	}
+});
+
+test('Lists 25', function(){
+	var result = p125([1]);
+	ok(equals(result, [1]), '[1] -> [1]');
+	result = p125([1,2,3]);
+	ok(result.length === 3, '[1,2,3] -> list of length 3');
+	for ( var i = 0; i < result.length; i++ ) {
+		ok([1,2,3].indexOf(result[i]) >= 0, result[i] + ' exists in [1,2,3]');
+	}
+	result = p125([1,2,3,4,5,6]);
+	ok(result.length === 6, '[1,2,3,4,5,6] -> list of length 6');
+	for ( var i = 0; i < result.length; i++ ) {
+		ok([1,2,3,4,5,6].indexOf(result[i]) >= 0, result[i] + ' exists in [1,2,3,4,5,6]');
+	}
+
 });

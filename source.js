@@ -230,6 +230,8 @@ function p123(l,k) {
 	for ( var i = 0; i < k; i++ ) {
 		var rnd = Math.floor(Math.random() * l.length);
 		result.push( l[rnd] );
+		var p120_result = p120(l, rnd+1);
+		l = p120_result.remainder;
 	}
 	return result;
 }
@@ -245,4 +247,8 @@ function p124(j,k) {
 		result.push(element);
 	}
 	return result;
+}
+
+function p125(l) {
+	return p123(l,l.length);
 }
