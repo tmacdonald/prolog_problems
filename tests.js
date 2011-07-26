@@ -272,3 +272,21 @@ test('Lists 28 b', function(){
 	ok(equals(p128b([[1],[1],[1,2]]), [[1,2],[1],[1]]), '[[1],[1],[1,2]] -> [[1,2],[1],[1]]');
 	ok(equals(p128b([[1,2,3],[1,2],[1,2,3],[1,2],[1,2,3,4],[1,2],[1]]), [[1,2,3,4],[1],[1,2,3],[1,2,3],[1,2],[1,2],[1,2]]), '[[1,2,3],[1,2],[1,2,3],[1,2],[1,2,3,4],[1,2],[1]] -> [[1,2,3,4],[1],[1,2,3],[1,2,3],[1,2],[1,2],[1,2]]');
 });
+
+test('Arithmetic 1', function(){
+	ok(is_prime(1), '1 is prime');
+	ok(is_prime(2), '2 is prime');
+	ok(is_prime(3), '3 is prime');
+	ok(!is_prime(4), '4 is not prime');
+	ok(is_prime(5), '5 is prime');
+	ok(!is_prime(6), '6 is not prime');
+	ok(is_prime(7), '7 is prime');
+	ok(!is_prime(8), '8 is not prime');
+	ok(!is_prime(9), '9 is not prime');
+});
+
+test('Arithmetic 2', function(){
+	ok(equals(prime_factors(2), [2]), '2 -> [2]');
+	ok(equals(prime_factors(9), [3,3]), '9 -> [3,3]');
+	ok(equals(prime_factors(315), [3,3,5,7]), '315 -> [3,3,5,7]');
+});

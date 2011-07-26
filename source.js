@@ -297,3 +297,30 @@ function p128b(l){
 	}
 	return l.sort(compare);
 }
+
+function is_prime(n){
+	for ( var i = 2; i < n; i++ ) {
+		if ( n % i === 0 ) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function prime_factors(n) {
+	var result = [];
+	while ( n > 1 ) {
+		var i = 2;
+		while ( true ) {
+			if ( is_prime(i) ) {
+				if ( n % i === 0 ) {
+					result.push(i);
+					n = n / i;
+					break;
+				} 
+			}
+			i++; 
+		}
+	}
+	return result;
+}
