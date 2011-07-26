@@ -271,3 +271,29 @@ function p126(l,k) {
 	}
 	return result;
 }
+
+function p127(){
+}
+
+function p128a(l){
+	function compare(a,b){
+		return a.length > b.length;
+	}
+	return l.sort(compare);
+}
+
+function p128b(l){
+	var frequencies = {};
+	for ( var i = 0; i < l.length; i++ ) {
+		var length = l[i].length;
+		if ( frequencies[length] ) {
+			frequencies[length] = frequencies[length] + 1;
+		} else {
+			frequencies[length] = 1;
+		}
+	}
+	function compare(a,b) {
+		return frequencies[a.length] > frequencies[b.length];
+	}
+	return l.sort(compare);
+}
