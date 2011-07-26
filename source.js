@@ -338,3 +338,25 @@ function prime_range(m,n) {
 	}
 	return result;
 }
+
+function goldbach(n) {
+	if ( n % 2 === 0 ) {
+		for ( var i = 2; i < n; i++ ) {
+			if ( is_prime(i) && is_prime(n-i) ) {
+				return [i,n-i];
+				
+			}
+		}
+	}
+	return undefined;
+}
+
+function goldbach_list(m,n) {
+	var result = [];
+	for ( var i = m; i <= n; i++ ) {
+		if ( i % 2 === 0 ) {
+			result.push( goldbach(i) );
+		}
+	}
+	return result;
+}
