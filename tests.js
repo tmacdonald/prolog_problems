@@ -304,7 +304,19 @@ test('Arithmetic 4', function(){
 });
 
 test('Arithmetic 5', function(){
+	ok(equals(goldbach(4), [2,2]), '4 -> [2,2]');
+	ok(equals(goldbach(8), [3,5]), '8 -> [3,5]');
+	ok(equals(goldbach(28), [5,23]), '28 -> [5,23]');
+});
+
+test('Arithmetic 6', function(){
 	ok(equals(goldbach_list(4,4), [[2,2]]), '4,4 -> [[2,2]]');
 	ok(equals(goldbach_list(3,8), [[2,2],[3,3],[3,5]]), '3,8 -> [[2,2],[3,3],[3,5]]');
 	ok(equals(goldbach_list(9,20), [[3,7],[5,7],[3,11],[3,13],[5,13],[3,17]]), '9,20 -> [[3,7],[5,7],[3,11],[3,13],[5,13],[3,17]]');
+});
+
+test('Arithmetic 7', function(){
+	ok(gcd(1,0) === 1, '1,0 -> 1');
+	ok(gcd(4,2) === 2, '4,2 -> 2');
+	ok(gcd(36,63) === 9, '36,63 -> 9');
 });

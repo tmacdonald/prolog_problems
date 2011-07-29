@@ -360,3 +360,11 @@ function goldbach_list(m,n) {
 	}
 	return result;
 }
+
+function gcd(a,b) {
+	if ( b === 0 ) {
+		return a;
+	} else {
+		return gcd(b, a % b);
+	}
+}
